@@ -1,0 +1,10 @@
+<label for="all">
+  <input type="checkbox" id="all" name="all" [checked]="toggleAllStatus()" (click)="toggleAllCheked($event)">
+  <span></span>
+  All
+</label>
+<label for="{{ item.value }}" *ngFor="let item of checklist">
+  <input type="checkbox" id="{{ item.value }}" name="{{ checkgroup }}" value="{{ item.value }}" tabindex="0" [(ngModel)]="item.checked" (ngModelChange)="onCheck()">
+  <span></span>
+  {{item.name}}
+</label>

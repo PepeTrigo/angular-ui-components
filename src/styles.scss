@@ -1,1 +1,159 @@
 /* You can add global styles to this file, and also import other style files */
+
+$true-white: #fff;
+$tnt-blue: #0099a8;
+$tnt-blue-light: #00aab2;
+$tnt-blue-shadow: #008e99;
+$header-grey: #707070;
+$bg-grey: #f0f0f0;
+$dark-grey: #262626;
+$dark-grey-light: #333333;
+$pinky-pink: #db0962;
+$pink-shadow: #c60a64;
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+select,
+textarea {
+  border: none;
+  margin: 5px 0 0 0;
+}
+
+legend {
+	color: #707070;
+	font-size: 1.5625rem;
+    font-family: "proxima-nova-alt",Tahoma,Arial,sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.field-label {
+	font-size: 18px;
+	background-color: #e6e6e6;
+	padding: 5px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+
+	.literal {
+		padding-left: 5px;
+	}
+}
+
+.control {
+	font-size: 18px;
+	position: relative;
+	display: block;
+	margin-bottom: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+	line-height: 1.4;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: $true-white;
+	border-radius: 2px;
+}
+
+.control--radio .control__indicator {
+	border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+	background: #ccc;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+	background: $tnt-blue;
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+	background: #0e647d;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control__indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+    top: 2px;
+    left: 6px;
+    width: 7px;
+    height: 14px;
+    transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0px 3px 3px 0;
+}
+
+/* Disabled tick colour */
+.control--checkbox input:disabled ~ .control__indicator:after {
+	border-color: #7b7b7b;
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+/* Disabled circle colour */
+.control--radio input:disabled ~ .control__indicator:after {
+	background: #7b7b7b;
+}
+
+.checkbox-block {
+	background-color: #e6e6e6;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 10px 0 30px 0;
+}

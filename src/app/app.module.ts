@@ -5,10 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UiChecklistComponent } from './ui-checklist/ui-checklist.component';
+import { UiSelectComponent } from './ui-select/ui-select.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UiChecklistComponent,
+    UiSelectComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,8 @@
 <h1>
   {{title}}
 </h1>
-<router-outlet></router-outlet>
+<ui-checklist checkgroup="works" [checklist]="works" (update)="onUpdate($event)"></ui-checklist>
+<ul>
+  <li *ngFor="let item of checkedItems">{{ item.name }}</li>
+</ul>
+
